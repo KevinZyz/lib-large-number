@@ -1,6 +1,6 @@
 {
   "name": "lib-large-number",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "大整数加法库",
   "main": "index.js",
   "scripts": {
