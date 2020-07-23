@@ -6,7 +6,7 @@
  * 为了解决上述问题，下面的方法通过字符串拼接的方式，得到一个准确的数字
  * @param {string} a 数字型字符串
  * @param {string} b 数字型字符串
- * @returns {string} 
+ * @returns {string}
  */
 export default function add(a, b) {
   let i = a.length - 1;
@@ -16,36 +16,36 @@ export default function add(a, b) {
   let carry = 0;
   let ret = '';
 
-  while(i >= 0 || j >= 0) {
+  while (i >= 0 || j >= 0) {
     let x = 0;
     let y = 0;
     let sum;
 
-    if(i >= 0) {
+    if (i >= 0) {
       // 转换为数字
       x = a[i] - '0';
-      i--;
+      i -= 1;
     }
 
-    if(j >= 0) {
+    if (j >= 0) {
       // 转换为数字
       y = b[j] - '0';
-      j--;
+      j -= 1;
     }
 
     sum = x + y + carry;
 
-    if(sum >= 10) {
+    if (sum >= 10) {
       carry = 1;
       sum -= 10;
-    }else{
+    } else {
       carry = 0;
     }
     // 结果用字符串拼接的方式
     ret = sum + ret;
   }
 
-  if(carry) {
+  if (carry) {
     ret = carry + ret;
   }
 

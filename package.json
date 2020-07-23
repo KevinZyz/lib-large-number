@@ -1,20 +1,51 @@
 {
   "name": "lib-large-number",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "大整数加法库",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack",
-    "prepublish": "webpack"
+    "webpack": "npm run fix && webpack",
+    "prepublish": "npm run webpack",
+    "fix": "npx eslint src/*.js --fix",
+    "lint": "npx eslint src/*.js",
+    "lint-message": "echo 'Lint code before commit, refuse if error occurred'"
   },
   "keywords": [],
   "author": "Kevin_ZHANG",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.2.5",
     "terser-webpack-plugin": "^3.0.7",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-message",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": "@commitlint/config-conventional"
+  },
+  "lint-staged": {
+    "linters": {
+      "src/*.js": [
+        "eslint --fix",
+        "git add"
+      ]
+    }
   },
   "repository": {
     "type": "git",
