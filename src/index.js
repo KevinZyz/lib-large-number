@@ -8,7 +8,7 @@
  * @param {string} b 数字型字符串
  * @returns {string}
  */
-export default function add(a, b) {
+function add(a, b) {
   let i = a.length - 1;
   let j = b.length - 1;
 
@@ -51,3 +51,6 @@ export default function add(a, b) {
 
   return ret;
 }
+
+
+module.exports = add;

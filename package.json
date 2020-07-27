@@ -1,10 +1,10 @@
 {
   "name": "lib-large-number",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "大整数加法库",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "istanbul cover ./node_modules/.bin/_mocha",
     "webpack": "npm run fix && webpack",
     "prepublish": "npm run webpack",
     "fix": "npx eslint src/*.js --fix",
@@ -21,11 +21,14 @@
     "@commitlint/config-conventional": "^9.1.1",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-import": "^2.22.0",
     "husky": "^4.2.5",
+    "istanbul": "^0.4.5",
+    "mocha": "^8.0.1",
     "terser-webpack-plugin": "^3.0.7",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
