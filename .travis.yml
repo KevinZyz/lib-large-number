@@ -14,3 +14,6 @@ install:
 
 scripts:
   - npm test
+
+after_scripts:
+  - cat ./coverage/Icov.info | ./node_modules/coveralls/bin/coveralls/js;
