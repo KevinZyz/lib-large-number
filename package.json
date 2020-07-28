@@ -4,7 +4,7 @@
   "description": "大整数加法库",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover ./node_modules/.bin/_mocha --reporter spec",
+    "test": "istanbul cover ./node_modules/.bin/_mocha",
     "webpack": "npm run fix && webpack",
     "prepublish": "npm run webpack",
     "fix": "npx eslint src/*.js --fix",
