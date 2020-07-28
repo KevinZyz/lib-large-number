@@ -96,11 +96,8 @@ return /******/ (function(modules) { // webpackBootstrap
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return add; });
 /**
  * 因为 JS 的 Number 类型存在位数限制，超过限制时，会存在「精度丢失」的问题
  * 同理，当我们需要处理两个「超大整数」相加时，直接套用加法运算会存在以下问题
@@ -155,6 +152,8 @@ function add(a, b) {
 
   return ret;
 }
+
+module.exports = add;
 
 /***/ })
 /******/ ])["default"];
